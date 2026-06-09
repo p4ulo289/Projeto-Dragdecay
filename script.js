@@ -96,3 +96,17 @@ var perguntas = [
   }
 ];
 
+var perguntaAtual = 0;
+var pontuacao = 0;
+var bloqueado = false;
+
+function exibirPergunta() {
+  // Verificação para o fim do quiz
+  if (perguntaAtual >= perguntas.length) {
+    mostrarResultado();
+    return;
+  }
+
+  var dados = perguntas[perguntaAtual];
+  var numero = perguntaAtual + 1;
+    }
