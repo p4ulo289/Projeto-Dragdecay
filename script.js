@@ -184,4 +184,64 @@ function verificarResposta(evento) {
   }, 1100);
 }
 
-    
+    function mostrarResultado() {
+  document.getElementById('quiz-body').classList.add('hidden');
+  document.getElementById('quiz-result').classList.remove('hidden');
+
+  var titulo = '';
+  var iconeSrc = null;
+
+  if (pontuacao >= 9) {
+    titulo = 'Excelente!';
+    iconeSrc = icones.trophy;
+  } else if (pontuacao >= 7) {
+    titulo = 'Muito bom!';
+    iconeSrc = icones.trophy;
+  } else if (pontuacao >= 5) {
+    titulo = 'Continue estudando!';
+    iconeSrc = icones.journals;
+  } else {
+    titulo = 'Revise o conteúdo!';
+    iconeSrc = icones.rocket;
+  }
+
+  var resultEmoji = document.getElementById('result-emoji');
+  resultEmoji.innerHTML = '';
+
+  if (iconeSrc) {
+    var iconeResultado = criarIcone(iconeSrc, 'svg-icon icon-result');
+    resultEmoji.appendChild(iconeResultado);
+  }
+
+  var textoResultado = document.createTextNode(' ' + titulo);
+  resultEmoji.appendChild(textoResultado);
+
+  document.getElementById('result-score').textContent = pontuacao + ' de ' + perguntas.length + ' corretas';
+}
+
+function restartQuiz() {
+  perguntaAtual = 0;
+  pontuacao = 0;
+  bloqueado = false;
+
+  document.getElementById('quiz-body').classList.remove('hidden');
+  document.getElementById('quiz-result').classList.add('hidden');
+
+  exibirPergunta();
+}
+
+// Inicia o quiz ao carregar a página
+exibirPergunta();
+
+// Ícone journals no label do backlog
+(function () {
+  var labels = document.querySelectorAll('.section-label');
+  for (var i = 0; i < labels.length; i++) {
+    if (labels[i].textContent.indexOf('02') !== -1) {
+      var iconeJournals = criarIcone(icones.journals, 'svg-icon icon-label');
+      labels[i].insertBefore(iconeJournals, labels[i].firstChild);
+      break;
+    }
+  }
+})();
+
