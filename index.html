@@ -129,3 +129,30 @@
       </div>
     </div>
   </section>
+
+  <!-- parte do QUIZ -->
+  <div class="section-full" id="quiz">
+    <div class="inner">
+      <p class="section-label">// 03 — Teste seu conhecimento</p>
+      <h2 class="section-title">Quiz <span>Espacial</span></h2>
+      <div class="line"></div>
+
+      <div class="quiz-box">
+        <div id="quiz-body">
+          <div class="quiz-top">
+            <span class="quiz-counter" id="quiz-counter">01 / 10</span>
+            <div class="progress-bar">
+              <div class="progress-fill" id="quiz-fill" style="width:10%"></div>
+            </div>
+          </div>
+          <p class="quiz-question" id="quiz-q"></p>
+          <div class="quiz-options" id="quiz-opts"></div>
+        </div>
+        <div class="quiz-result hidden" id="quiz-result">
+          <h3 id="result-emoji"></h3>
+          <p id="result-score"></p>
+          <button class="btn" onclick="restartQuiz()">Tentar novamente</button>
+        </div>
+      </div>
+    </div>
+  </div>
