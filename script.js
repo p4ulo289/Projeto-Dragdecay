@@ -245,3 +245,68 @@ exibirPergunta();
   }
 })();
 
+
+// Formulário
+
+document.getElementById('contact-form').addEventListener('submit', function (evento) {
+  evento.preventDefault();
+
+  var nome     = document.getElementById('nome').value.trim();
+  var email    = document.getElementById('email').value.trim();
+  var mensagem = document.getElementById('mensagem').value.trim();
+
+  var valido = true;
+
+  // Validação do nome
+  if (nome === '') {
+    document.getElementById('nome').classList.add('invalid');
+    document.getElementById('erro-nome').textContent = 'Informe seu nome.';
+    valido = false;
+  } else {
+    document.getElementById('nome').classList.remove('invalid');
+    document.getElementById('erro-nome').textContent = '';
+  }
+
+  // Validação do e-mail
+  if (email === '') {
+    document.getElementById('email').classList.add('invalid');
+    document.getElementById('erro-email').textContent = 'Informe seu e-mail.';
+    valido = false;
+  } else if (email.indexOf('@') === -1 || email.indexOf('.') === -1) {
+    document.getElementById('email').classList.add('invalid');
+    document.getElementById('erro-email').textContent = 'E-mail inválido.';
+    valido = false;
+  } else {
+    document.getElementById('email').classList.remove('invalid');
+    document.getElementById('erro-email').textContent = '';
+  }
+
+  // Validação da mensagem
+  if (mensagem === '') {
+    document.getElementById('mensagem').classList.add('invalid');
+    document.getElementById('erro-mensagem').textContent = 'Escreva sua mensagem.';
+    valido = false;
+  } else {
+    document.getElementById('mensagem').classList.remove('invalid');
+    document.getElementById('erro-mensagem').textContent = '';
+  }
+
+  // Se tudo válido, exibe a mensagem de sucesso
+  if (valido) {
+    var formSucesso = document.getElementById('form-sucesso');
+    formSucesso.innerHTML = '';
+
+    var iconeRocket = criarIcone(icones.rocket, 'svg-icon icon-sucesso');
+    formSucesso.appendChild(iconeRocket);
+
+    var textoSucesso = document.createTextNode(' // Mensagem enviada com sucesso.');
+    formSucesso.appendChild(textoSucesso);
+
+    formSucesso.classList.remove('hidden');
+    document.getElementById('contact-form').reset();
+
+    setTimeout(function () {
+      document.getElementById('form-sucesso').classList.add('hidden');
+    }, 4000);
+  }
+});
