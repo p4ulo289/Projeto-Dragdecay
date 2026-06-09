@@ -1,3 +1,17 @@
+var icones = {
+  trophy:   'images/trophy.svg',
+  check:    'images/check-lg.svg',
+  rocket:   'images/rocket-takeoff.svg',
+  journals: 'images/journals.svg'
+};
+
+function criarIcone(src, className) {
+  var img = document.createElement('img');
+  img.src = src;
+  img.className = className || 'svg-icon';
+  return img;
+}
+
 /* Slides */
 var slideAtual = 0;
 var slides = document.querySelectorAll('.slide');
@@ -137,8 +151,7 @@ function exibirPergunta() {
   bloqueado = false;
     }
 
-
-    function verificarResposta(evento) {
+function verificarResposta(evento) {
   if (bloqueado) return;
   bloqueado = true;
 
@@ -153,6 +166,8 @@ function exibirPergunta() {
     var indiceBtn = parseInt(botoes[i].getAttribute('data-indice'));
     if (indiceBtn === correta) {
       botoes[i].classList.add('correct');
+      var iconeCheck = criarIcone(icones.check, 'svg-icon icon-correct');
+      botoes[i].appendChild(iconeCheck);
     } else if (indiceBtn === indiceEscolhido) {
       botoes[i].classList.add('wrong');
     }
@@ -168,3 +183,5 @@ function exibirPergunta() {
     exibirPergunta();
   }, 1100);
 }
+
+    
