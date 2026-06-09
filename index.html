@@ -40,3 +40,48 @@
       <a href="#missao" class="info-btn">Ver missão →</a>
     </div>
   </section>
+
+<!-- parte da MISSAO -->
+  <div class="section-full" id="missao">
+    <div class="inner">
+      <p class="section-label">// 01 — Nossa missão</p>
+      <h2 class="section-title">O problema do<br><span>lixo espacial</span></h2>
+      <div class="line"></div>
+
+      <div class="slide-wrap">
+        <div class="slide active">
+          <img src="https://s2-techtudo.glbimg.com/BLOo5cxteBABOVjynY7DGDv4zpQ=/0x0:695x391/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2021/f/t/dv2oKESLeVFeEuTIfQsA/2015-08-18-satelites-orbita-internet.jpg" alt="Satélite em órbita" />
+          <div class="slide-caption">
+            <h3>O Problema do Lixo Espacial</h3>
+            <p>Satélites em LEO permanecem em órbita por tempo excessivo após o fim da missão.</p>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="https://media.gazetadopovo.com.br/2012/06/foguete_china-1.0.87122521-gpMedium.jpg" alt="Espaço profundo" />
+          <div class="slide-caption">
+            <h3>Decaimento Controlado</h3>
+            <p>O DragDecay Controller simula e controla o decaimento orbital de forma autônoma.</p>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="https://archive-share.america.gov/wp-content/uploads/2024/01/NASA_space_walk_-McCandless_S84-27562orig-1068x858.jpg" alt="Terra vista do espaço" />
+          <div class="slide-caption">
+            <h3>Sustentabilidade Orbital</h3>
+            <p>Alinhado aos ODS 9 e 12 da ONU, garantindo o espaço viável para futuras missões.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-controls">
+        <button class="slide-btn" onclick="changeSlide(-1)">&#8592;</button>
+        <button class="slide-btn" onclick="changeSlide(1)">&#8594;</button>
+        <span style="margin-left:12px;">
+          <span class="ponto active" onclick="goToSlide(0)"></span>
+          <span class="pontos-gap"></span>
+          <span class="ponto" onclick="goToSlide(1)"></span>
+          <span class="pontos-gap"></span>
+          <span class="ponto" onclick="goToSlide(2)"></span>
+        </span>
+      </div>
+    </div>
+  </div>
