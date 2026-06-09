@@ -136,3 +136,35 @@ function exibirPergunta() {
 
   bloqueado = false;
     }
+
+
+    function verificarResposta(evento) {
+  if (bloqueado) return;
+  bloqueado = true;
+
+  var indiceEscolhido = parseInt(evento.target.getAttribute('data-indice'));
+  var correta = perguntas[perguntaAtual].correta;
+  var botoes = document.querySelectorAll('.quiz-opt');
+
+  // Disable de todos os botoes e o destaque da resposta
+  for (var i = 0; i < botoes.length; i++) {
+    botoes[i].disabled = true;
+
+    var indiceBtn = parseInt(botoes[i].getAttribute('data-indice'));
+    if (indiceBtn === correta) {
+      botoes[i].classList.add('correct');
+    } else if (indiceBtn === indiceEscolhido) {
+      botoes[i].classList.add('wrong');
+    }
+  }
+
+  if (indiceEscolhido === correta) {
+    pontuacao++;
+  }
+
+  // Timeout para a próxima pergunta
+  setTimeout(function () {
+    perguntaAtual++;
+    exibirPergunta();
+  }, 1100);
+}
