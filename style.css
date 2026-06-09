@@ -488,3 +488,62 @@ section {
 
 .hidden { display: none !important; }
 
+/* Formulário */
+
+.contact-form {
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.form-group input,
+.form-group textarea {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--light);
+  padding: 12px 16px;
+  border-radius: 4px;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  transition: border-color 0.2s;
+  resize: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.form-group input.invalid,
+.form-group textarea.invalid { border-color: #ff5252; }
+
+.error-msg {
+  font-size: 0.75rem;
+  color: #ff5252;
+  min-height: 14px;
+  font-family: var(--mono);
+}
+
+.form-success {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: #00e676;
+  letter-spacing: 1px;
+  text-align: center;
+}
