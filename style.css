@@ -547,3 +547,59 @@ section {
   letter-spacing: 1px;
   text-align: center;
 }
+
+/* Finalização */
+
+finalizacao {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid var(--border);
+  padding: 40px 48px;
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--text);
+  line-height: 2;
+}
+
+finalizacao strong { color: var(--accent); }
+
+/* Ícones SVG */
+
+.svg-icon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: middle;
+  filter: invert(1) sepia(1) saturate(5) hue-rotate(175deg); /* cor --accent */
+}
+
+.icon-correct {
+  margin-left: 8px;
+  filter: invert(1) sepia(1) saturate(5) hue-rotate(85deg); /* cor verde */
+}
+
+.icon-result {
+  width: 28px;
+  height: 28px;
+  filter: invert(1) sepia(1) saturate(5) hue-rotate(175deg);
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
+.icon-sucesso {
+  filter: invert(1) sepia(1) saturate(5) hue-rotate(85deg); /* cor verde */
+}
+
+.icon-label {
+  margin-right: 6px;
+  filter: invert(1) sepia(1) saturate(5) hue-rotate(175deg);
+}
+
+@media (max-width: 700px) {
+  nav { padding: 16px 20px; }
+  .nav-links { display: none; }
+  section { padding: 70px 20px; }
+  .section-full > .inner { padding: 70px 20px; }
+  finalizacao { padding: 32px 20px; }
+}
