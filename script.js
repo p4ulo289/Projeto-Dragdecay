@@ -109,4 +109,30 @@ function exibirPergunta() {
 
   var dados = perguntas[perguntaAtual];
   var numero = perguntaAtual + 1;
+  // Atualiza o contador e a barra de progresso
+  document.getElementById('quiz-counter').textContent = '0' + numero + ' / ' + perguntas.length;
+
+  var porcentagem = (numero / perguntas.length) * 100;
+  document.getElementById('quiz-fill').style.width = porcentagem + '%';
+
+  // Atualiza o texto da pergunta
+  document.getElementById('quiz-q').textContent = dados.pergunta;
+
+  // Limpa as opções anteriores e cria as novas
+  var container = document.getElementById('quiz-opts');
+  container.innerHTML = '';
+
+  for (var i = 0; i < dados.opcoes.length; i++) {
+    var botao = document.createElement('button');
+    botao.className = 'quiz-opt';
+    botao.textContent = dados.opcoes[i];
+
+    // só para dar um começo no loop
+    botao.setAttribute('data-indice', i);
+    botao.addEventListener('click', verificarResposta);
+
+    container.appendChild(botao);
+  }
+
+  bloqueado = false;
     }
