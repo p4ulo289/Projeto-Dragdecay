@@ -345,3 +345,45 @@ section {
 
 .pontos-gap { display: inline-block; width: 8px; }
 
+/* Cards do backlog */
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 22px;
+  transition: border-color 0.2s, transform 0.25s;
+}
+
+.card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.card-id {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: var(--gold);
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--light);
+  margin-bottom: 8px;
+}
+
+.card p {
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
